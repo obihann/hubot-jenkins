@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Hubot Jenkins Auth by obihann</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Hubot Jenkins Auth</h1>
+        <h2>Interact with your Jenkins CI server.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/obihann/hubot-jenkins-auth/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/obihann/hubot-jenkins-auth/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/obihann/hubot-jenkins-auth" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description:</h1>
+
+<blockquote>
+<p>Interact with your Jenkins CI server. </p>
+</blockquote>
+
+<p>Forked from  balbeko/hubot-jenkins and added extra control so users can be resctriced to specific projects. Also check out obihann/hubot-jenkins-auth-manager, so you can easily manage the credentials database.</p>
+
+<h1>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration:</h1>
+
+<ul>
+<li>HUBOT_JENKINS_URL</li>
+<li>HUBOT_JENKINS_AUTH</li>
+</ul>
+
+<p>Auth should be in the <code>user:password</code> format.</p>
+
+<h1>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands:</h1>
+
+<ul>
+<li>hubot jenkins b  - builds the job specified by jobNumber. List jobs to get number.</li>
+<li>hubot jenkins build  - builds the specified Jenkins job</li>
+<li>hubot jenkins build ,  - builds the specified Jenkins job with parameters as key=value&amp;key2=value2</li>
+<li>hubot jenkins list  - lists Jenkins jobs</li>
+<li>hubot jenkins describe  - Describes the specified Jenkins job</li>
+<li>hubot jenkins last  - Details about the last build for the specified Jenkins job</li>
+</ul>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
