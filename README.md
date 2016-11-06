@@ -1,5 +1,6 @@
 #Description:
 > Interact with your Jenkins CI server. 
+
 Forked from  balbeko/hubot-jenkins and added extra control so users can be resctriced to specific projects. Also check out obihann/hubot-jenkins-auth-manager, so you can easily manage the credentials database.
 
 #Configuration:
