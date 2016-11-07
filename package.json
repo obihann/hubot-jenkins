@@ -1,38 +1,96 @@
 {
-  "name": "hubot-jenkins",
+  "_args": [
+    [
+      {
+        "raw": "github:obihann/hubot-jenkins",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "github:obihann/hubot-jenkins",
+        "spec": "github:obihann/hubot-jenkins",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:obihann/hubot-jenkins.git",
+          "sshUrl": "git+ssh://git@github.com/obihann/hubot-jenkins.git",
+          "httpsUrl": "git+https://github.com/obihann/hubot-jenkins.git",
+          "gitUrl": "git://github.com/obihann/hubot-jenkins.git",
+          "shortcut": "github:obihann/hubot-jenkins",
+          "directUrl": "https://raw.githubusercontent.com/obihann/hubot-jenkins/master/package.json"
+        }
+      },
+      "/Users/jeffhann/DevOps/jenkins-botler"
+    ]
+  ],
+  "_from": "obihann/hubot-jenkins",
+  "_id": "hubot-jenkins@1.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/hubot-jenkins",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "github:obihann/hubot-jenkins",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "github:obihann/hubot-jenkins",
+    "spec": "github:obihann/hubot-jenkins",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:obihann/hubot-jenkins.git",
+      "sshUrl": "git+ssh://git@github.com/obihann/hubot-jenkins.git",
+      "httpsUrl": "git+https://github.com/obihann/hubot-jenkins.git",
+      "gitUrl": "git://github.com/obihann/hubot-jenkins.git",
+      "shortcut": "github:obihann/hubot-jenkins",
+      "directUrl": "https://raw.githubusercontent.com/obihann/hubot-jenkins/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git://github.com/obihann/hubot-jenkins.git#f76df98779a13b280717ed877b361e51e5908e6a",
+  "_shasum": "cdf9b02f0825fe0b9af32dfb36eb932c0b143067",
+  "_shrinkwrap": null,
+  "_spec": "github:obihann/hubot-jenkins",
+  "_where": "/Users/jeffhann/DevOps/jenkins-botler",
+  "author": {
+    "name": "Doug Cole"
+  },
+  "bugs": {
+    "url": "https://github.com/hubot-scripts/hubot-jenkins/issues"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "coffee-script": "~1.6",
+    "js-yaml": "^3.6.1"
+  },
   "description": "Jenkins Integration for Hubot",
-  "version": "1.0.2",
-  "author": "Doug Cole",
-  "license": "MIT",
-
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "sinon": "*",
+    "sinon-chai": "*"
+  },
+  "gitHead": "f76df98779a13b280717ed877b361e51e5908e6a",
+  "homepage": "https://github.com/hubot-scripts/hubot-jenkins#readme",
   "keywords": [
     "hubot",
     "hubot-scripts"
   ],
-
+  "license": "MIT",
+  "main": "index.coffee",
+  "name": "hubot-jenkins",
+  "optionalDependencies": {},
+  "readme": "#Description:\n Interact with your Jenkins CI server\n\n#Dependencies:\n None\n\n#Configuration:\n* HUBOT_JENKINS_URL\n* HUBOT_JENKINS_AUTH\n\nAuth should be in the `user:password` format.\n\n#Commands:\n* hubot jenkins b <jobNumber> - builds the job specified by jobNumber. List jobs to get number.\n* hubot jenkins build <job> - builds the specified Jenkins job\n* hubot jenkins build <job>, <params> - builds the specified Jenkins job with parameters as key=value&key2=value2\n* hubot jenkins list <filter> - lists Jenkins jobs\n* hubot jenkins describe <job> - Describes the specified Jenkins job\n* hubot jenkins last <job> - Details about the last build for the specified Jenkins job",
+  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/hubot-scripts/hubot-jenkins.git"
   },
-
-  "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-jenkins/issues"
-  },
-
-  "dependencies": {
-    "coffee-script": "~1.6"
-  },
-
-  "devDependencies": {
-    "mocha": "*",
-    "chai": "*",
-    "sinon-chai": "*",
-    "sinon": "*"
-  },
-
-  "main": "index.coffee",
-
   "scripts": {
     "test": "script/test"
-  }
+  },
+  "version": "1.0.2"
 }

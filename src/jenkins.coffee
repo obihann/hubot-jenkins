@@ -7,6 +7,7 @@
 # Configuration:
 #   HUBOT_JENKINS_URL
 #   HUBOT_JENKINS_AUTH
+#   HUBOT_JENKINS_AUTH_FILE
 #
 #   Auth should be in the "user:password" format.
 #
@@ -17,12 +18,21 @@
 #   hubot jenkins list <filter> - lists Jenkins jobs
 #   hubot jenkins describe <job> - Describes the specified Jenkins job
 #   hubot jenkins last <job> - Details about the last build for the specified Jenkins job
-
 #
 # Author:
-#   dougcole
+#   dougcole, Jeff Hann <jeffhann@gmail.com>
 
 querystring = require 'querystring'
+yaml        = require 'js-yaml'
+fs          = require 'fs'
+path        = require 'path'
+Promise     = require 'bluebird'
+
+ERROR_MSG = 'http://i.imgur.com/gcxjB9d.png'
+ENCODING  = 'utf8'
+
+auth_path = process.env.HUBOT_JENKINS_AUTH_FILE
+auth_data = yaml.safeLoad(fs.readFileSync(auth_path, ENCODING))
 
 # Holds a list of jobs, so we can trigger them with a number
 # instead of the job's name. Gets populated on when calling
@@ -173,6 +183,17 @@ jenkinsLast = (msg) ->
 
             msg.send response
 
+checkAuth = (msg, jobFromServer) ->
+  res = false
+
+  for job in auth_data.jobs
+    if jobFromServer.name == job.name
+      for user in job.users
+        if msg.message.user.name == user.name
+          res = true
+
+  res
+
 jenkinsList = (msg) ->
     url = process.env.HUBOT_JENKINS_URL
     filter = new RegExp(msg.match[2], 'i')
@@ -200,7 +221,8 @@ jenkinsList = (msg) ->
             .forEach (job, index) ->
               state = if job.color == "red" then "FAIL" else "PASS"
               if filter.test job.name
-                response += "[#{index + 1}] #{state} #{job.name}\n"
+                if checkAuth msg, job
+                  response += "[#{index + 1}] #{state} #{job.name}\n"
             msg.send response
           catch error
             msg.send error
